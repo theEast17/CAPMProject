@@ -1,0 +1,106 @@
+get http://localhost:4004/odata/v4/CatalogService/poitems HTTP/1.1
+
+###
+get http://localhost:4004/odata/v4/CatalogService/businesspartner HTTP/1.1
+
+###
+get http://localhost:4004/odata/v4/CatalogService/businesspartner/4aad1e3b-a70a-4a26-9521-5990f3519b51 HTTP/1.1
+
+###
+
+PATCH http://localhost:4004/odata/v4/CatalogService/businesspartner/4aad1e3b-a70a-4a26-9521-5990f3519b51 HTTP/1.1
+Content-Type: application/json
+
+{
+     "EMAIL_ADDRESS": "beckervendor123@gmail.com"
+}
+
+###
+get http://localhost:4004/odata/v4/CatalogService/worker HTTP/1.1
+
+###
+
+POST http://localhost:4004/odata/v4/CatalogService/worker HTTP/1.1
+Content-Type: application/json
+
+{
+      "firstName": "Sunita",
+      "lastName": "Kaurav",
+      "Gender": "F",
+      "phoneNumber": "7982345640",
+      "email": "Sunita@gmail.com",
+      "Currency": "INR",
+      "salaryAmount": 79779
+}
+
+###
+DELETE http://localhost:4004/odata/v4/CatalogService/worker/549e3ce5-e0eb-4d8c-920b-81f2d5abf2e3 HTTP/1.1
+
+
+### crud operation
+POST http://localhost:4004/odata/v4/CatalogService/businesspartner HTTP/1.1
+Content-Type: application/json
+
+{
+      "NODE_KEY": "4aad1e3b-a70a-4a26-9521-5990f3519555",
+      "BP_ROLE": 1,
+      "EMAIL_ADDRESS": "eastvendor@gmail.com",
+      "PHONE_NUMBER": 5436544,
+      "FAX_NUMBER": 465333,
+      "WEB_ADDRESS": "www.abcdef.com",
+      "BP_ID": 1201,
+      "COMPANY_NAME": "east"
+}
+
+###
+PATCH http://localhost:4004/odata/v4/CatalogService/businesspartner/4aad1e3b-a70a-4a26-9521-5990f3519555 HTTP/1.1
+Content-Type: application/json
+
+{
+    "EMAIL_ADDRESS": "Poorvvendor@gmail.com"
+}
+
+###
+
+DELETE http://localhost:4004/odata/v4/CatalogService/businesspartner/4aad1e3b-a70a-4a26-9521-5990f3519555 HTTP/1.1
+
+
+###CDSViews - You can not perform POST operation on Views:-
+
+GET http://localhost:4004/odata/v4/CDSViewsSrv/ItemView HTTP/1.1
+
+###using CQL - 
+POST  http://localhost:4004/odata/v4/new-cql/insertworker HTTP/1.1
+Content-Type: application/json
+
+{
+      "firstName": "Poorv",
+      "lastName": "Nagar",
+      "Gender": "M",
+      "phoneNumber": "7987934567",
+      "email": "Poorv@gmail.com"
+}
+
+###
+PATCH http://localhost:4004/odata/v4/new-cql/updateworker/774dcea6-ac76-4c47-94a6-05e37816cd04 HTTP/1.1
+Content-Type: application/json
+
+{
+       "firstName": "Saurabh1",
+      "lastName": "Asthana1"
+}
+
+###
+DELETE http://localhost:4004/odata/v4/new-cql/deleteworker/ca26685d-6af4-4b25-b595-37e0c9a26948 HTTP/1.1
+
+
+###
+POST  http://localhost:4004/odata/v4/increment/hike HTTP/1.1
+Content-Type: application/json
+
+{
+      "ID":"774dcea6-ac76-4c47-94a6-05e37816cd04"
+}
+
+###
+GET http://localhost:4004/odata/v4/salary/getHighestSalary() HTTP/1.1

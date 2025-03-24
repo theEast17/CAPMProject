@@ -70,11 +70,15 @@ DELETE http://localhost:4004/odata/v4/CatalogService/businesspartner/4aad1e3b-a7
 GET http://localhost:4004/odata/v4/CDSViewsSrv/ItemView HTTP/1.1
 
 ###using CQL - 
-POST  http://localhost:4004/odata/v4/new-cql/insertworker HTTP/1.1
+
+GET  http://localhost:4004/odata/v4/newCQL/readworker HTTP/1.1
+
+###
+POST  http://localhost:4004/odata/v4/newCQL/insertworker HTTP/1.1
 Content-Type: application/json
 
 {
-      "firstName": "Poorv",
+      "firstName": "Poor123v",
       "lastName": "Nagar",
       "Gender": "M",
       "phoneNumber": "7987934567",
@@ -82,16 +86,20 @@ Content-Type: application/json
 }
 
 ###
-PATCH http://localhost:4004/odata/v4/new-cql/updateworker/774dcea6-ac76-4c47-94a6-05e37816cd04 HTTP/1.1
+PATCH http://localhost:4004/odata/v4/newCQL/updateworker/774dcea6-ac76-4c47-94a6-05e37816cd04 HTTP/1.1
 Content-Type: application/json
 
 {
-       "firstName": "Saurabh1",
-      "lastName": "Asthana1"
+      "firstName": "Saurabh",
+      "lastName": "Asthana",
+      "Gender": "M"
 }
 
 ###
-DELETE http://localhost:4004/odata/v4/new-cql/deleteworker/ca26685d-6af4-4b25-b595-37e0c9a26948 HTTP/1.1
+DELETE http://localhost:4004/odata/v4/newCQL/deleteworker/ca26685d-6af4-4b25-b595-37e0c9a26948 HTTP/1.1
+
+
+
 
 
 ###

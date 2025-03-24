@@ -1,6 +1,6 @@
 using {india.db.master} from '../db/datamodel';
 
-service NewCQLService {
+service NewCQLService @(path: 'newCQL') {
     @readonly
     entity readworker   as projection on master.worker;
 

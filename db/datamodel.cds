@@ -10,6 +10,12 @@ using {india.customAspect} from './customAspect';
 
 context master {
 
+    entity EVENTS{
+        key ID:Integer;
+        ENAME:String(30);
+        ECITY:String(30)
+    }
+
     entity worker : cuid, managed {
         firstName    : String(30);
         lastName     : String(30);

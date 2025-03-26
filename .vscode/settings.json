@@ -15,5 +15,7 @@
       "name": "india.db",
       "database": "${workspaceFolder:mycapm}/india.db"
     }
-  ]
+  ],
+  "SAP HANA Project Explorer.bind.confirm automatic undeployment": false,
+  "SAP HANA Database Artifacts.lastSelectedTargetPath": "/home/user/projects/mycapm/db/src/CalculationViews"
 }

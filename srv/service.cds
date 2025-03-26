@@ -1,6 +1,7 @@
 using {
     india.db.master,
-    india.db.transaction
+    india.db.transaction,
+    india.db.BP_AD
 } from '../db/datamodel';
 
 service catalogService @(path: 'CatalogService') {
@@ -40,6 +41,7 @@ service catalogService @(path: 'CatalogService') {
 
     @readonly
     entity worker          as projection on master.worker;
+
 }
 
 
@@ -47,4 +49,9 @@ service catalogService @(path: 'CatalogService') {
 service salary {
     entity worker as projection on master.worker;
     function getHighestSalary() returns Decimal(15,2)
+}
+
+service CalViewService{
+    @readonly
+    entity CV_BP_AD as projection on BP_AD
 }

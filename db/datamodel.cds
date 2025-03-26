@@ -94,3 +94,21 @@ context transaction {
             PRODUCT_GUID : Association to master.product;
     }
 }
+    
+@cds.persistence.exists 
+@cds.persistence.calcview 
+Entity BP_AD {
+key     CREATEDAT: Timestamp  @title: 'CREATEDAT: CREATEDAT' ; 
+        CREATEDBY: String(255)  @title: 'CREATEDBY: CREATEDBY' ; 
+        MODIFIEDAT: Timestamp  @title: 'MODIFIEDAT: MODIFIEDAT' ; 
+        MODIFIEDBY: String(255)  @title: 'MODIFIEDBY: MODIFIEDBY' ; 
+        NODE_KEY: String(50)  @title: 'NODE_KEY: NODE_KEY' ; 
+        BP_ROLE: String(2)  @title: 'BP_ROLE: BP_ROLE' ; 
+        EMAIL_ADDRESS: String(105)  @title: 'EMAIL_ADDRESS: EMAIL_ADDRESS' ; 
+        PHONE_NUMBER: String(32)  @title: 'PHONE_NUMBER: PHONE_NUMBER' ; 
+        FAX_NUMBER: String(32)  @title: 'FAX_NUMBER: FAX_NUMBER' ; 
+        WEB_ADDRESS: String(44)  @title: 'WEB_ADDRESS: WEB_ADDRESS' ; 
+        ADDRESS_GUID_NODE_KEY: String(50)  @title: 'ADDRESS_GUID_NODE_KEY: ADDRESS_GUID_NODE_KEY' ; 
+        BP_ID: String(16)  @title: 'BP_ID: BP_ID' ; 
+        COMPANY_NAME: String(250)  @title: 'COMPANY_NAME: COMPANY_NAME' ; 
+}

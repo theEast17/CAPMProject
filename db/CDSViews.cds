@@ -8,14 +8,14 @@ using {
 context CDSViews {
     define view ![PODetails] as
         select from transaction.purchaseorder {
-            key PO_ID                             as ![purchaseorders id],
-                PARTNER_GUID.BP_ID                as ![vendor id],
-                PARTNER_GUID.COMPANY_NAME         as ![company name],
-                GROSS_AMOUNT                      as ![POGross Amount],
-                CURRENCY_CODE                     as ![POCurrency Code],
+            key PO_ID                             as ![purchaseorders_id],
+                PARTNER_GUID.BP_ID                as ![vendor_id],
+                PARTNER_GUID.COMPANY_NAME         as ![company_name],
+                GROSS_AMOUNT                      as ![POGross_Amount],
+                CURRENCY_CODE                     as ![POCurrency_Code],
             key Items.PO_ITEM_POS                 as ![ItemPosition],
                 Items.PRODUCT_GUID.PRODUCT_ID     as ![ProductId],
-                Items.PRODUCT_GUID.DESCRIPTION    as ![Product Description],
+                Items.PRODUCT_GUID.DESCRIPTION    as ![Product_Description],
                 PARTNER_GUID.ADDRESS_GUID.CITY    as ![city],
                 PARTNER_GUID.ADDRESS_GUID.COUNTRY as ![country],
                 Items.GROSS_AMOUNT                as ![GrossAmount],

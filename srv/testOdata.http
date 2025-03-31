@@ -4,6 +4,19 @@ get http://localhost:4004/odata/v4/CatalogService/poitems HTTP/1.1
 get http://localhost:4004/odata/v4/CatalogService/businesspartner HTTP/1.1
 
 ###
+get http://localhost:4004/odata/v4/CatalogService/purchaseorder HTTP/1.1
+Authorization: Basic poorv:welcome
+
+###
+get http://localhost:4004/odata/v4/CatalogService/worker HTTP/1.1
+Authorization: Basic nagar:welcome1
+
+###
+get http://localhost:4004/odata/v4/CatalogService/worker HTTP/1.1
+Authorization: Basic poorv:welcome
+
+
+###
 get http://localhost:4004/odata/v4/CatalogService/businesspartner/4aad1e3b-a70a-4a26-9521-5990f3519b51 HTTP/1.1
 
 ###
@@ -123,6 +136,6 @@ POST http://localhost:4004/odata/v4/sequenceService/sequence HTTP/1.1
 Content-Type: application/json
 
 {
-      "ENAME":"Hockey",
-      "ECITY":"Delhi"
+      "ENAME":"Baseball",
+      "ECITY":"Hongkong"
 }

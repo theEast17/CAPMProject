@@ -4,7 +4,7 @@ using {
     india.db.BP_AD
 } from '../db/datamodel';
 
-service catalogService @(path: 'CatalogService') {
+service catalogService @(path: 'CatalogService') @(requires: 'authenticated-user') {
     entity businesspartner as projection on master.businesspartner;
 
     annotate catalogService.businesspartner with @(Capabilities: {
@@ -39,8 +39,20 @@ service catalogService @(path: 'CatalogService') {
 
     entity poitems         as projection on transaction.poitems;
 
-    @readonly
-    entity worker          as projection on master.worker;
+    entity worker @(restrict: [
+        {
+            grant: ['READ'],
+            to   : 'Viewer',
+            where: 'Gender=$user.Gender'
+        },
+        {
+            grant: [
+                'READ',
+                'WRITE'
+            ],
+            to   : 'Admin'
+        }
+    ])                     as projection on master.worker;
 
 }
 
@@ -48,10 +60,10 @@ service catalogService @(path: 'CatalogService') {
 @impl: './highSalary.js'
 service salary {
     entity worker as projection on master.worker;
-    function getHighestSalary() returns Decimal(15,2)
+    function getHighestSalary() returns Decimal(15, 2)
 }
 
-service CalViewService{
+service CalViewService {
     @readonly
     entity CV_BP_AD as projection on BP_AD
 }

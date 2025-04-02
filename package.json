@@ -6,9 +6,9 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@cap-js-community/odata-v2-adapter": "^1.14.2",
     "@cap-js/hana": "^1",
     "@sap/cds": "^8",
-    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
     "@sap/hana-client": "^2.24.21",
     "@sap/xssec": "^4",
     "axios": "^1.8.3",
@@ -19,9 +19,9 @@
     "@cap-js/cds-types": "^0.9.0",
     "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^8",
-    "sqlite": "^5.1.1",
+    "mbt": "^1.2.29",
     "rimraf": "^5.0.5",
-    "mbt": "^1.2.29"
+    "sqlite": "^5.1.1"
   },
   "scripts": {
     "start": "cds-serve",
@@ -31,6 +31,12 @@
     "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
   },
   "cds": {
+    "fiori": {
+      "preview": true
+    },
+    "server": {
+      "index": true
+    },
     "build": {
       "tasks": [
         {
@@ -53,32 +59,40 @@
         "kind": "xsuaa"
       },
       "auth": {
-        "[production]":{
-          "strategy":"JWT"
+        "[production]": {
+          "strategy": "JWT"
         },
         "[development]": {
           "strategy": "mock",
           "users": {
-            "poorv":{
+            "poorv": {
               "password": "welcome",
-              "roles": ["Admin"],
-              "userAttributes":{
-                "Gender":["$UNRESTRICTED"]
+              "roles": [
+                "Admin"
+              ],
+              "userAttributes": {
+                "Gender": [
+                  "$UNRESTRICTED"
+                ]
               }
             },
-            "nagar":{
+            "nagar": {
               "password": "welcome1",
-              "roles": ["Viewer"],
-              "userAttributes":{
-                "Gender":["M"]
+              "roles": [
+                "Viewer"
+              ],
+              "userAttributes": {
+                "Gender": [
+                  "M"
+                ]
               }
             }
           }
         }
       }
-    }
-  },
-  "sapux": [
-    "app/mycapm_fiori"
-  ]
+    },
+    "sapux": [
+      "app/mycapm_fiori"
+    ]
+  }
 }

@@ -17,5 +17,6 @@
     }
   ],
   "SAP HANA Project Explorer.bind.confirm automatic undeployment": false,
-  "SAP HANA Database Artifacts.lastSelectedTargetPath": "/home/user/projects/mycapm/db/src/Sequence"
+  "SAP HANA Database Artifacts.lastSelectedTargetPath": "/home/user/projects/mycapm/db/src/Sequence",
+  "SAP HANA Database Explorer.UseObjectsDefinitionForSqlGeneration.RetentionTime": 7
 }
